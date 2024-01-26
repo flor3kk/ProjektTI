@@ -1,0 +1,437 @@
+/*
+# MOON Bet/podstrony
+
+Ogólne style dla całej strony:
+  - html, body: Ustawienia dla całego dokumentu.
+  - @font-face: Dodanie niestandardowej czcionki.
+  - body: Tło strony.
+
+Header strony:
+  - div#top_menu: pierwsza cześć nagłówka
+  - div#top_menu2: druga czesc nagłówka
+
+
+div main:
+  - navi: nawigacja strony z odnosnikami
+  - div#main_view: główna sekcja do wyswietlania meczy, 2 divy 
+  - div#result: sekcja do podsumowania kursów uzytkownika i ich obstawienia
+  - dialog#formularz: sekcja do uzupelnienia przez uzytkownika
+
+footer strony:
+  - sekcja ze stopka strony
+
+model box-sizing:
+  - *: Ustawienia dla wszystkich elementów.
+
+Układ dla mniejszych ekranow
+  - @media only screen and (max-width: 1672): responsywnosc dla ekranow mniejszych niz 1672 px
+
+Styleguide 2.1.2
+*/ 
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: cornsilk;
+    font-family: "Comic Sans MS";
+}
+
+.text{
+    font-size: 23px;
+    padding: 0;
+    margin: 0;
+}
+
+#info, #kurs, #wygrana{
+    font-size: 23px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.kursy{
+    display: flex;
+    width: 100%;
+}
+
+.odnosnik img{
+    vertical-align: middle;
+    margin-right: 0;
+    padding: 5px 0 5px 5px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 1672px){
+
+    .kursy{
+        display: initial;
+        width: 100%;
+    }
+
+    #top_menu .odnosnik{
+        display: block;
+    }
+
+    .odnosnik img{
+        padding: 0;
+    }
+
+    #top_menu a{
+        display: none;
+    }
+    
+    #main{
+        display: inline-block;
+    }
+    #navi img{
+        display: inline-block;
+        scale: 0.8;
+    }
+
+    #navi a:nth-child(2){
+        display: none;
+    }
+
+    #butsub p{
+        display: none;
+    }
+
+    #butsub img{
+        display: inline;
+    }
+
+    #info, #kurs, #wygrana{
+        font-size: 12px;
+    }
+
+    .text{
+        font-size: 12px;
+    }
+}
+
+footer{
+    width: 100%;
+}
+
+h1{
+    margin-left: 5px;
+}
+
+h3{
+    margin-left: 15px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#container{
+    width: auto;
+}
+
+#header{
+    padding: 0 0 10px 0;
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#footer{
+    background-color: #cadbc8;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#top_menu{
+    background-color: black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: #fff;
+}
+
+
+#top_menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 25px;
+    text-transform: uppercase;
+}
+
+.odnosnik:hover{
+    background-color: grey;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0px 0px 100px 20px rgb(75, 70, 70);
+}
+
+#top_menu div:hover a{
+    color: black;  
+}
+
+#top_menu2{
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: fit-content;
+    box-shadow: 0px 4px 20px 4px grey;     
+}
+
+.zdjecie{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#dodaj, .zdjecie:nth-of-type(1){
+    cursor: pointer;
+}
+
+#navi{
+    background-color: #a1a499;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 25px;
+}
+
+#navi img{
+    vertical-align: middle;
+}
+
+#navi a{
+    text-decoration: none;
+    color: black;
+}
+
+#pilka_nozna, #koszykowka, #rugby, #hokej, #box, #krykiet{
+    background-color: #9c9583;
+    margin: 5px;
+    text-align: center;
+    justify-content: space-between;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+#pilka_nozna:hover, #koszykowka:hover, #rugby:hover, #hokej:hover, #box:hover, #krykiet:hover{
+    background-color: cornsilk;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#ankieta{
+    background-color: rgba(79, 28, 114, 1);
+    background-image: linear-gradient(87deg, rgba(79, 28, 114, 1) 0%, rgba(32, 74, 75, 1) 93%);
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+#ankieta p{
+    margin-top: -5px;
+}
+
+#ankieta:hover{
+    background-color: rgb(131, 25, 99);
+    transition: 1s;
+    box-shadow: 0 0 25px 7px rgb(77, 25, 77);
+}
+
+#main_view{
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: 60%;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.dzien{
+    display: flex;
+    justify-content: space-between;   
+}
+
+
+.obstaw{
+    background-color: rgb(165, 202, 110);
+    margin: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.obstaw2{
+    background-color: rgb(50, 137, 82);
+    margin: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.obstaw:hover, .obstaw2:hover{
+    background-color: white;
+    color: red;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0px 0px 100px 5px #333;
+}
+
+
+.obstaw:active, .obstaw.active, .obstaw2:active, .obstaw2.active{
+    background-color: #47476b;
+    border: black solid 2px;
+    color: #100d1f;
+}
+
+
+#result{
+    background-color: #a1a499;
+    margin-top: 5px;
+    padding: 5px;
+    width: 15%;
+    text-align: center;
+    height: fit-content;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 25px;
+}
+
+#butsub{
+    background-color: rgba(79, 28, 114, 1);
+    background-image: linear-gradient(87deg, rgba(79, 28, 114, 1) 0%, rgba(32, 74, 75, 1) 93%);
+    cursor: pointer;
+    margin: 10px;
+}
+
+#butsub p{
+    margin-top: -5px;
+}
+
+#butsub:hover{
+    background-color: rgb(131, 25, 99);
+    transition: 1s;
+    box-shadow: 0 0 25px 7px rgb(77, 25, 77);
+    animation: rotate-in-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+
+@keyframes rotate-in-center {
+    0% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+      opacity: 1;
+    }
+  }
+  
+
+#stawka{
+    border-radius: 20px;
+    width: 7vw;
+}
+
+#formularz{
+    width: 60%;
+    height: 60%;
+    background-color: rgba(225, 225, 225, 1);
+    background-image: linear-gradient(154deg, rgba(225, 225, 225, 1) 0%, rgba(195, 199, 137, 1) 93%);
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    box-shadow: 0 4px 8px rgbrgba(49, 49, 49, 0.1);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+#close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+fieldset{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+fieldset legend{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+fieldset input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 200px;
+}
+
+option {
+    padding: 0;
+}
+  
+input[type="range"] {
+    width: 200px;
+}
+
+fieldset input[type="submit"]{
+    background-color: lightgreen;
+}
+
+
+fieldset input[type="reset"]{
+    background-color: lightgoldenrodyellow;
+}
+
+fieldset hr{
+    border: 1px black solid;
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+}
+

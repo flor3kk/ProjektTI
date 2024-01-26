@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”description” content=”gra w obstawianie meczów” />
+    <title>MOONBet</title>
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body onload="body()">  
+    <div id="container">
+
+        <header>
+
+            <div id="header">
+
+                <aside>
+
+                    <div id="top_menu">
+
+                        <div id="name">
+
+                            <img src="logo.png" alt="logo">
+                
+                        </div>
+
+                        <div class="odnosnik" onclick="myhref('regulamin.pdf');">
+
+                            <img src="regulamin.png">
+                            <a href="regulamin.pdf"> regulamin </a>
+
+                        </div>
+
+                        <div class="odnosnik" onclick="myhref('autor.pdf');">
+                            
+                            <img src="autor.png">
+                            <a href="autor.pdf"> autor </a>
+
+                        </div>
+
+                        <div class="odnosnik" onclick="myhref('https://patronite.pl/');">
+                            
+                            <img src="wsparcie.png">
+                            <a href="https://patronite.pl/"> wsparcie </a>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+                <div id="top_menu2">
+
+                    <div class="zdjecie">
+
+                        <img src="kasa_add.png" alt="dodawanie kasy" onclick="add_funds()">
+
+                    </div>
+
+                    <p id="dodaj" onclick="add_funds()">Dodaj środki</p>
+
+                    <div class="zdjecie">
+
+                        <img src="kasa.png" alt="zdjecie pokazujace banknoty" >
+
+                    </div>
+
+                    Saldo&nbsp;&rarr;&nbsp;
+
+                    <p id="kasa">
+                        200 zł
+                    </p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div id="main">
+
+            <nav id="navi">
+
+                <div id="pilka_nozna" onclick="myhref('pilka.html')">
+
+                    <a><img src="pilka.png" alt="pilka nozna"></a>
+                    <a>Piłka nozna</a>
+                
+                </div>
+    
+                <div id="koszykowka" onclick="myhref('kosz.html')">
+
+                    <a><img src="kosz.png" alt="koszykowka"></a>
+                    <a>koszykowka</a>
+    
+                </div>
+    
+                <div id="rugby" onclick="myhref('rugby.html')"> 
+
+                    <a><img src="rugby.png" alt="rugby"></a>
+                    <a>rugby</a>
+    
+                </div>
+
+                <div id="hokej" onclick="myhref('hokej.html')">
+
+                    <a><img src="hokej.png" alt="hokej"></a>
+                    <a>hokej</a>
+    
+                </div>
+
+                <div id="box" onclick="myhref('box.html')">
+
+                    <A><img src="box.png" alt="box"></A>
+                    <a>box</a>
+    
+                </div>
+
+                <div id="krykiet" onclick="myhref('krykiet.html')">
+
+                    <A><img src="krykiet.png" alt="krykiet"></A>
+                    <a >krykiet</a>
+    
+                </div>
+
+                <div id="ankieta" onclick="question()">
+                    <img src="ankieta.png"><a>ankieta</a>
+                </div>
+            </nav>
+
+
+            <div id="main_view">
+
+                <article>
+
+                    <div class="dzien">
+                            
+                        <h1>Dzisiaj: </h1>
+                        <h1><div id="dzisiaj"></div></h1>
+
+                    </div>
+
+                    <div class="mecz">
+
+                         <h5></h5>
+
+                        <div class="kursy">
+                    
+                            <div class="obstaw" onclick="toggleDiv(this)">
+
+                                <span class="klub1"></span>
+                                <BR>
+                                <span class="kurs1"></span>
+
+                            </div>
+                            <div class="obstaw_remis" onclick="toggleDiv(this)">
+
+                                <span class="remis"></span>
+                                <BR>
+                                <span class="kurs2"></span>
+
+                            </div>
+                            <div class="obstaw2" onclick="toggleDiv(this)">
+
+                                <span class="klub2"></span>
+                                <BR>
+                                <span class="kurs3"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>  
+
+                    <hr>
+
+                    <div class="mecz">
+
+                        <h5></h5>
+        
+                        <div class="kursy">
+                    
+                            <div class="obstaw" onclick="toggleDiv(this)">
+
+                                <span class="klub1"></span>
+                                <BR>
+                                <span class="kurs1"></span>
+
+                            </div>
+                            <div class="obstaw_remis" onclick="toggleDiv(this)">
+
+                                <span class="remis"></span>
+                                <BR>
+                                <span class="kurs2"></span>
+
+                            </div>
+                            <div class="obstaw2" onclick="toggleDiv(this)">
+
+                                <span class="klub2"></span>
+                                <BR>
+                                <span class="kurs3"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>  
+
+                    <hr>
+                
+                    <div class="mecz">
+
+                        <h5></h5>
+
+                        <div class="kursy">
+                    
+                            <div class="obstaw" onclick="toggleDiv(this)">
+
+                                <span class="klub1"></span>
+                                <BR>
+                                <span class="kurs1"></span>
+
+                            </div>
+                            <div class="obstaw_remis" onclick="toggleDiv(this)">
+
+                                <span class="remis"></span>
+                                <BR>
+                                <span class="kurs2"></span>
+
+                            </div>
+                            <div class="obstaw2" onclick="toggleDiv(this)">
+
+                                <span class="klub2"></span>
+                                <BR>
+                                <span class="kurs3"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>  
+
+                    <hr>
+
+                    <div class="mecz">
+
+                        <h5></h5>
+
+                        <div class="kursy">
+                    
+                            <div class="obstaw" onclick="toggleDiv(this)">
+
+                                <span class="klub1"></span>
+                                <BR>
+                                <span class="kurs1"></span>
+
+                            </div>
+                            <div class="obstaw_remis" onclick="toggleDiv(this)" >
+
+                                <span class="remis"></span>
+                                <BR>
+                                <span class="kurs2"></span>
+
+                            </div>
+                            <div class="obstaw2" onclick="toggleDiv(this)">
+
+                                <span class="klub2"></span>
+                                <BR>
+                                <span class="kurs3"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>  
+
+                    <hr>
+
+                    <div class="mecz">
+
+                        <h5></h5>
+            
+                        <div class="kursy">
+                    
+                            <div class="obstaw" onclick="toggleDiv(this)">
+
+                                <span class="klub1"></span>
+                                <BR>
+                                <span class="kurs1"></span>
+
+                            </div>
+                            <div class="obstaw_remis" onclick="toggleDiv(this)">
+
+                                <span class="remis"></span>
+                                <BR>
+                                <span class="kurs2"></span>
+
+                            </div>
+                            <div class="obstaw2" onclick="toggleDiv(this)">
+
+                                <span class="klub2"></span>
+                                <BR>
+                                <span class="kurs3"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>  
+
+                    <hr>
+
+                    <div class="dzien">
+                            
+                        <h1>Jutro: </h1>
+                        <h1><div id="jutro"></div></h1>
+
+                    </div>
+
+                    <div class="mecz">
+
+                        <h5></h5>
+
+                        <div class="kursy">
+                    
+                            <div class="obstaw" onclick="toggleDiv(this)">
+
+                                <span class="klub1"></span>
+                                <BR>
+                                <span class="kurs1"></span>
+
+                            </div>
+                            <div class="obstaw_remis" onclick="toggleDiv(this)">
+
+                                <span class="remis"></span>
+                                <BR>
+                                <span class="kurs2"></span>
+
+                            </div>
+                            <div class="obstaw2" onclick="toggleDiv(this)">
+
+                                <span class="klub2"> </span>
+                                <BR>
+                                <span class="kurs3"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>  
+
+                    <hr>
+
+                    <div class="mecz">
+
+                        <h5></h5>
+
+                        <div class="kursy">
+                    
+                            <div class="obstaw" onclick="toggleDiv(this)">
+
+                                <span class="klub1"></span>
+                                <BR>
+                                <span class="kurs1"></span>
+
+                            </div>
+                            <div class="obstaw_remis" onclick="toggleDiv(this)">
+
+                                <span class="remis"></span>
+                                <BR>
+                                <span class="kurs2"></span>
+
+                            </div>
+                            <div class="obstaw2" onclick="toggleDiv(this)">
+
+                                <span class="klub2"> </span>
+                                <BR>
+                                <span class="kurs3"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>  
+                
+                </article>
+
+            </div>
+
+            <div id="result">
+                kurs:<BR>
+                <p id="kurs">0</p>
+                <p class="text">Stawka: </p><BR>
+                <input type="number" id="stawka" placeholder="200zł"><BR>
+                <p id="info"></p>
+                <p class="text">wygrana:</p><BR>
+                <p id="wygrana"></p>
+
+                <div id="butsub" onclick="submit()">
+                    <img src="check.png">
+                    <p>Obstaw</p>
+                </div>
+
+
+            </div>
+
+            <dialog id="formularz">
+                <div id="close" onclick="closeDialog()">X</div>
+                <form id="druk">
+                    <fieldset>
+                        <legend>Ankieta na temat uzaleznienia hazardowego</legend>
+
+                        <label for="data">Podaj datę urodzenia</label>
+                        <input type="date" id="data" required>
+                        <br>
+            
+                        <label for="plec">Wybierz płeć:</label><br>
+                        >Kobieta<input type="radio" name="plec"> 
+                        Mężczyzna<input type="radio" name="plec"> 
+                        Nie chcę podawać <input type="radio" name="plec"> 
+                        <br><br>
+            
+                        <label>Jak często obstawiasz mecze w ciągu tygodnia?</label><br>
+                        1-5 <input type="radio" name="wybor"> 
+                        5-9 <input type="radio" name="wybor"> 
+                        >10<input type="radio" name="wybor">
+                        <br><br>
+
+                        <label for="zainteresowania">Ktory sport najczesciej wybierasz</label><BR>
+                        <select id="zainteresowania" required>
+                            <option> pilka nozna</option>
+                            <option> koszykowka</option>
+                            <option> siatkowka</option>
+                            <option> tenis</option>
+                        </select>
+                        <BR>
+                            <label for="cena">Jaka wartosc najczesciej obstawiasz? (w zł)</label>
+                            <input type="range" id="cena" list="values" step="5" min="1" max="101" required/>
+                            
+                            <datalist id="values">
+                              <option value="0" label="1"></option>
+                              <option value="25" label="5"></option>
+                              <option value="50" label="10"></option>
+                              <option value="75" label="50"></option>
+                              <option value="100" label=">100"></option>
+                            </datalist>
+                        
+                        
+                        <HR>
+
+                        <div id="operations">
+                            <label for="wyslij">Zatwierdz odpowiedzi</label>
+                            <input type="submit" value="Przeslij" id="wyslij" onclick="GeneratePdf()">
+
+                            <BR>
+                            
+                            <label for="reset">Wyczysc dane</label>
+                            <input type="reset" id="reset" value="Wyczysc">
+                            
+                        </div>
+
+                    </fieldset>
+                </form>
+            </dialog>
+            
+
+            <footer>
+                <div id="footer">
+                    <b>strone wykonal: Bartłomiej Florek</b><BR>
+                    wszelkie prawa zastrzezone - &copy 2023
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js" defer>
+    </script>
+    
+    <script src="api_box.js" defer>
+    </script>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer> 
+    </script>
+  
+</body>
+</html>

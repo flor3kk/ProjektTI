@@ -1,0 +1,490 @@
+/*
+# MOON Bet/main
+
+Ogólne style dla całej strony:
+  - html, body: Ustawienia dla całego dokumentu.
+  - @font-face: Dodanie niestandardowej czcionki.
+  - body: Tło strony.
+
+Header strony:
+  - div#top_menu: pierwsza cześć nagłówka
+  - div#top_menu2: druga czesc nagłówka
+
+
+div main:
+  - navi: nawigacja strony z odnosnikami
+  - div#main_view: główna sekcja do wyswietlania meczy
+  - div#result: sekcja do podsumowania kursów uzytkownika i ich obstawienia
+  - dialog#formularz: sekcja do uzupelnienia przez uzytkownika
+
+footer strony:
+  - sekcja ze stopka strony
+
+model box-sizing:
+  - *: Ustawienia dla wszystkich elementów.
+
+Układ dla mniejszych ekranow
+  - @media only screen and (max-width: 1672): responsywnosc dla ekranow mniejszych niz 1672 px
+
+Styleguide 2.1.2
+*/ 
+
+/* ustawia domyslne style dla strony*/
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: cornsilk;
+    font-family: "Comic Sans MS";
+}
+
+/*ostylowanie klasy text*/
+.text{
+    font-size: 23px;
+    padding: 0;
+    margin: 0;
+}
+
+/*ostylowanie divow info kurs i wygrana*/
+#info, #kurs, #wygrana{
+    font-size: 23px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*ostylowanie klasy kursy*/
+.kursy{
+    display: flex;
+    width: 100%;
+}
+
+/*ostylowanie zdjecia znajdujacego sie w klasie odnosnik*/
+.odnosnik img{
+    vertical-align: middle;
+    margin-right: 0;
+    padding: 5px 0 5px 5px;
+    margin: 5px;
+}
+
+/* responsywnosc dla mniejszych ekranow*/
+@media screen and (max-width: 1672px){
+
+    .kursy{
+        display: initial;
+        width: 100%;
+    }
+
+    /* odnosniki w top_menu*/
+    #top_menu .odnosnik{
+        display: block;
+    }
+
+    .odnosnik img{
+        padding: 0;
+    }
+
+    #top_menu a{
+        display: none;
+    }
+    
+    /* wyswietlanie main na mniejszych ekranach*/
+    #main{
+        display: inline-block;
+    }
+    #navi img{
+        display: inline-block;
+        scale: 0.8;
+    }
+
+    #navi a:nth-child(2){
+        display: none;
+    }
+
+    /*stylowanie dla paragrafu w #butsub*/
+    #butsub p{
+        display: none;
+    }
+
+    #butsub img{
+        display: inline;
+        margin: 2px 0px 2px 0px;
+    }
+
+    #ankieta p{
+        display: none;
+    }
+
+    #ankieta img{
+        display: inline;
+        margin: 2px 0px 2px 0px;
+    }
+
+    #ankieta{
+        padding: 0;
+    }
+    /*rozmiar czcionki*/
+    #info, #kurs, #wygrana{
+        font-size: 12px;
+    }
+
+    .text{
+        font-size: 12px;
+    }
+}
+
+/*szerokosc stopki*/
+footer{
+    width: 100%;
+}
+
+h1{
+    margin-left: 5px;
+}
+
+h3{
+    margin-left: 15px;
+}
+
+/*globalne box-sizing*/
+*{
+    box-sizing: border-box;
+}
+
+/*głowny kontener*/
+#container{
+    width: auto;
+}
+
+/*header */
+#header{
+    padding: 0 0 10px 0;
+}
+
+/*styl dla głownego kontenera*/
+#main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*styl dla stopki*/
+#footer{
+    background-color: #cadbc8;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/*styl dla top_menu*/
+#top_menu{
+    background-color: black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: #fff;
+}
+
+/*styl dla odnosnikow dla top_menu*/
+#top_menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 25px;
+    text-transform: uppercase;
+}
+
+/*styl dla odnosnika po najechaniu*/
+.odnosnik:hover{
+    background-color: grey;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0px 0px 100px 20px rgb(75, 70, 70);
+}
+
+/*style dla odnosnika po najechaniu na diva w top_menu*/
+#top_menu div:hover a{
+    color: black;  
+}
+
+/*ostylowanie dla top_menu2*/
+#top_menu2{
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: fit-content;
+    box-shadow: 0px 4px 20px 4px grey;     
+}
+
+/*marginesy dla klasy zdjecie*/
+.zdjecie{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#dodaj, .zdjecie:nth-of-type(1){
+    cursor: pointer;
+}
+
+/*ostylowanie dla sekcji navi*/
+#navi{
+    background-color: #a1a499;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: max-content;
+    padding: 5px;
+    margin-top: 5px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 25px;
+}
+
+/*ostylowanie dla zdjecia w sekcji navi*/
+#navi img{
+    vertical-align: middle;
+}
+
+/*ostylowanie dla odnosnika w sekcji navi*/
+#navi a{
+    text-decoration: none;
+    color: black;
+}
+
+/*ostylowania dla divow znajdujacych sie w navi*/
+#pilka_nozna, #koszykowka, #rugby, #hokej, #box, #krykiet{
+    background-color: #9c9583;
+    margin: 5px;
+    text-align: center;
+    justify-content: space-between;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+/*ostylowania dla divow po najechaniu znajdujacych sie w navi*/
+#pilka_nozna:hover, #koszykowka:hover, #rugby:hover, #hokej:hover, #box:hover, #krykiet:hover{
+    background-color: cornsilk;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/*ostylownie dla diva ankieta*/
+#ankieta{
+    background-color: rgba(79, 28, 114, 1);
+    background-image: linear-gradient(87deg, rgba(79, 28, 114, 1) 0%, rgba(32, 74, 75, 1) 93%);
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+/*ostylowanie dla paragrafu znajdujacego sie w divie ankieta*/
+#ankieta p{
+    margin-top: -5px;
+}
+
+/*ostylowanie dla diva ankieta po najechaniu*/
+#ankieta:hover{
+    background-color: rgb(131, 25, 99);
+    transition: 1s;
+    box-shadow: 0 0 25px 7px rgb(77, 25, 77);
+}
+
+/*ostylowanie dla diva main_view*/
+#main_view{
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: 60%;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+/*ostylowanie dla klasy .dzien*/
+.dzien{
+    display: flex;
+    justify-content: space-between;   
+}
+
+/*ostylowanie dla divow obstaw*/
+.obstaw, .obstaw2{
+    background-color: rgb(82, 64, 82);
+    margin: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+/*ostylowanie dla divow obstaw po najechaniu*/
+.obstaw:hover, .obstaw2:hover, .obstaw_remis:hover{
+    background-color: white;
+    color: red;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0px 0px 100px 5px #333;
+}
+
+/*ostylowanie klasy obstaw_remis*/
+.obstaw_remis{
+    background-color: green;
+    text-align: center;
+    margin: 5px;
+    flex: 1;
+}
+
+/*ostylowanie divow po kliknieciu w nie*/
+.obstaw:active, .obstaw.active, .obstaw2:active, .obstaw2.active, .obstaw_remis:active, .obstaw_remis.active{
+    background-color: #47476b;
+    border: black solid 2px;
+    color: #100d1f;
+}
+
+/*ostylowanie result*/
+#result{
+    background-color: #a1a499;
+    margin-top: 5px;
+    padding: 5px;
+    width: 15%;
+    text-align: center;
+    height: fit-content;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 25px;
+}
+
+/*ostylowanie butsub*/
+#butsub{
+    background-color: rgba(79, 28, 114, 1);
+    background-image: linear-gradient(87deg, rgba(79, 28, 114, 1) 0%, rgba(32, 74, 75, 1) 93%);
+    cursor: pointer;
+    margin: 10px;
+}
+
+/*ostylowanie paragrafu znajdujacego sie w butsub*/
+#butsub p{
+    margin-top: -5px;
+}
+
+/*ostylowanie butsub po najechaniu*/
+#butsub:hover{
+    background-color: rgb(131, 25, 99);
+    transition: 1s;
+    box-shadow: 0 0 25px 7px rgb(77, 25, 77);
+}
+  
+/*ostylowanie diva stawka*/
+#stawka{
+    border-radius: 20px;
+    width: 7vw;
+}
+
+/*ostylowanie formularza*/
+#formularz{
+    width: 60%;
+    height: 60%;
+    background-color: rgba(225, 225, 225, 1);
+    background-image: linear-gradient(154deg, rgba(225, 225, 225, 1) 0%, rgba(195, 199, 137, 1) 93%);
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    box-shadow: 0 4px 8px rgb(49, 49, 49, 0.1);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*animacja przygotowana dla przycisku*/
+@keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+
+/*ostylowanie diva close*/
+#close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+/*ostylowanie fieldseta*/
+fieldset{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*ostylowanie legendy w fieldsecie*/
+fieldset legend{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/*ostylowanie inputow i selecta w fieldsecie*/
+fieldset input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+form fieldset label {
+    flex-direction: row;
+    
+}
+
+form input[type="radio"]{
+    width: 10px;
+    background-color: black;
+}
+
+
+/*ostylowanie datalisty*/
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 200px;
+}
+
+/*ostylowanie option*/
+option {
+    padding: 0;
+}
+
+/*ostylowanie dla inputu range*/
+input[type="range"] {
+    width: 200px;
+}
+
+/*ostylowanie dla inputu submit znajdujacego sie w fieldsecie*/
+fieldset input[type="submit"]{
+    background-color: lightgreen;
+}
+
+/*ostylowanie dla inputu reset znajdujacego sie w fieldsecie*/
+fieldset input[type="reset"]{
+    background-color: lightgoldenrodyellow;
+}
+
+/*ostylowanie dla lini w fieldsecie*/
+fieldset hr{
+    border: 1px black solid;
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+}
+
+
